@@ -57,3 +57,66 @@ a {
   margin: 0 auto;
   padding: 2.5rem 2rem;
 }
+
+.increase-experience-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.increase-experience-box h1 {
+  line-height: 4.8rem;
+}
+
+.increase-experience-box .input-group {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  gap: .8rem;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0 1.2rem;
+  border: 0;
+  border-radius: .4rem;
+  transition: all .3s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-group input:hover {
+  border: solid .4rem var(--gray-line);
+}
+
+.input-group input:focus {
+  border: solid .4rem var(--gray-line);
+}
+
+.input-group button {
+  border: 0;
+  border-radius: .4rem;
+  padding: 0 1.2rem;
+  color: var(--white);
+  transition: all .3s;
+}
+
+.input-group #increase {
+  background: var(--green);
+}
+
+.input-group #increase:hover {
+  opacity: 50%;
+}
+
+.input-group #decrease {
+  background: var(--red);
+}
+
+.input-group #decrease:hover {
+  opacity: 50%;
+}
