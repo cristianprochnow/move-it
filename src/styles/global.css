@@ -18,18 +18,6 @@
   box-sizing: border-box;
 }
 
-@media(max-width: 1080px) {
-  html {
-    font-size: 93.75%;
-  }
-}
-
-@media(max-width: 720px) {
-  html {
-    font-size: 87.5%;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--text);
@@ -66,13 +54,20 @@ a {
 }
 
 .increase-experience-box h1 {
-  line-height: 4.8rem;
+  line-height: 3.2rem;
+  color: var(--title);
+}
+
+.increase-experience-box strong {
+  line-height: 1.6rem;
+  color: var(--text);
 }
 
 .increase-experience-box .input-group {
   display: flex;
   width: 100%;
   height: 4rem;
+  margin-top: 2rem;
   gap: .8rem;
 }
 
@@ -82,11 +77,6 @@ a {
   border: 0;
   border-radius: .4rem;
   transition: all .3s;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
 }
 
 .input-group input:hover {
@@ -119,4 +109,29 @@ input::-webkit-inner-spin-button {
 
 .input-group #decrease:hover {
   opacity: 50%;
+}
+
+@media(max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media(max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .increase-experience-box .input-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group input {
+    padding: 1.2rem;
+  }
+
+  .input-group button {
+    padding: 1.2rem;
+  }
 }

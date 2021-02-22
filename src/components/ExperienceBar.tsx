@@ -1,15 +1,23 @@
 import '../styles/components/experience-bar.css'
 
-export function ExperienceBar() {
+interface ExperienceBarProps {
+  currentExperiencePercentage: number
+  currentExperienceValue: number
+}
+
+export function ExperienceBar(props: ExperienceBarProps) {
   return (
     <header className="experience-bar">
       <span>0 xp</span>
 
       <div>
-        <div style={{ width: '50%' }}></div>
+        <div style={{ width: `${props.currentExperiencePercentage}%` }}></div>
 
-        <span className="current-experience" style={{ left: '50%' }}>
-          300 xp
+        <span
+          className="current-experience"
+          style={{ left: `${props.currentExperiencePercentage}%` }}
+        >
+          {props.currentExperienceValue} xp
         </span>
       </div>
 
