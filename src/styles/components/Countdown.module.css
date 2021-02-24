@@ -54,3 +54,35 @@
 .countdownButton:hover {
   background: var(--blue-dark);
 }
+
+#pauseCountdownButton {
+  background: var(--white) !important;
+  color: var(--text) !important;
+}
+
+#pauseCountdownButton:hover {
+  background: var(--red) !important;
+  color: var(--white) !important;
+}
+
+#continueCountdownButton {
+  background: var(--green) !important;
+}
+
+#continueCountdownButton:hover {
+  background: #41bd22 !important;
+}
+
+#resetCountdownButton {
+  background: var(--blue-twitter);
+}
+
+#resetCountdownButton:hover {
+  background: #289dcf !important;
+}
+
+.buttonGroup {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: .8rem;
+}

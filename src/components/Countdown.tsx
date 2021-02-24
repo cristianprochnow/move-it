@@ -4,6 +4,8 @@ import styles from '../styles/components/Countdown.module.css'
 export function Countdown() {
   const [time, setTime] = useState(25 * 60)
   const [active, setActive] = useState(false)
+  const [alreadyStarted, setAlreadyStarted] = useState(false)
+  const [isReseted, setReseted] = useState(false)
 
   const minutes = Math.floor(time / 60)
   const seconds = time % 60
@@ -17,9 +19,28 @@ export function Countdown() {
 
   function startCountdown() {
     setActive(true)
+    setAlreadyStarted(true)
+    setReseted(false)
+  }
+
+  function pauseCountdown() {
+    setActive(false)
+    setTime(time)
+  }
+
+  function resetCountdown() {
+    setActive(false)
+    setAlreadyStarted(false)
+    setReseted(true)
   }
 
   useEffect(() => {
+    if (isReseted) {
+      setTime(25 * 60)
+
+      return
+    }
+
     if (active && time > 0) {
       setTimeout(() => {
         setTime(time - 1)
@@ -41,13 +62,40 @@ export function Countdown() {
         </div>
       </div>
 
-      <button
-        type="button"
-        className={styles.countdownButton}
-        onClick={startCountdown}
-      >
-        Iniciar um ciclo
-      </button>
+      {
+        !active ? (
+          <button
+            type="button"
+            className={styles.countdownButton}
+            id={ alreadyStarted ? styles.continueCountdownButton : '' }
+            onClick={startCountdown}
+          >
+            {
+              !alreadyStarted ? 'Iniciar um ciclo' : 'Continuar ciclo'
+            }
+          </button>
+        ) : (
+          <div className={styles.buttonGroup}>
+            <button
+              type="button"
+              className={styles.countdownButton}
+              id={styles.pauseCountdownButton}
+              onClick={pauseCountdown}
+            >
+              Pausar ciclo
+            </button>
+
+            <button
+              type="button"
+              className={styles.countdownButton}
+              id={styles.resetCountdownButton}
+              onClick={resetCountdown}
+            >
+              Reiniciar
+            </button>
+          </div>
+        )
+      }
     </div>
   )
 }
