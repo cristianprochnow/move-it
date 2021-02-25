@@ -1,34 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Move.it][logo]
 
-## Getting Started
+![Languages][languages-shield]
+![License][license-shield]
+![Bootcamp][nlw-shield]
 
-First, run the development server:
+**The best way to be productive and healthy. Both at the same time.**
 
-```bash
+**[▶ Demonstration]()**
+
+
+# 📚 About
+Moveit is a pomodoro based app that help you to stay healthy during working time being totally productive.
+
+With this app, you are able to work between "25 minutes" periods, and the gain experience and levels, like a game.
+
+**This project can offers productivity, health and fun, all at the same time! 😋**
+
+## 🛠 Build with
+
+- [x] [React.js][reactjs]
+- [x] [Next.js][nextjs]
+
+# 🔥 Getting started
+**Node (NPM)**
+```
+npm install
+
 npm run dev
-# or
+```
+**Yarn**
+```
+yarn
+
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙ Prerequisites
+To run this project you must have [Node.js][nodejs] installed in your machine.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The [Yarn][yarnjs] package manager is optional. Based on the NPM, it is a bit different at some factors, improving some issues that NPM would have. But, if you desire, can use NPM without doubt, currently they are practically worth.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# 🤟🏼 Contributing
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. 🍴 Fork the Project
+2. 👯 Clone this project (`git clone https://github.com/cristianprochnow/move-it.git`)
+3. 🔀 Create your Feature Branch (`git checkout -b my-feature`)
+4. ✔️ Commit your Changes (`git commit -m 'feat: My new feature'`)
+5. 📌 Push to the Branch (`git push origin my-feature`)
+6. 🔁 Open a Pull Request
 
-## Learn More
+# 📞 Contact
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-To learn more about Next.js, take a look at the following resources:
+# 📜 License
+This project is under **MIT License**. Check `LICENSE` for more details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[logo]: ./public/logo-full.svg
+[move-it-url]: https://move-it-now.vercel.app/
+[languages-shield]: https://shields.io/github/languages/count/cristianprochnow/move-it?style=flat&color=5965E0
+[license-shield]: https://shields.io/github/license/cristianprochnow/move-it?style=flat&color=5965E0
+[nlw-shield]: https://img.shields.io/static/v1?label=next%20level%20week&message=4&color=4CD62B
+[reactjs]: https://reactjs.org/
+[nextjs]: https://nextjs.org/
+[nodejs]: https://nodejs.org/
+[yarnjs]: https://yarnpkg.com/
+[linkedin-shield]: https://img.shields.io/badge/-Cristian_Prochnow-black.svg?e&logo=linkedin&colorB=0077b4
+[linkedin-url]: https://www.linkedin.com/in/cristianprochnow
