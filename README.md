@@ -26,6 +26,16 @@ With this app, you are able to work between "25 minutes" periods, and the gain e
 - [x] [React.js][reactjs]
 - [x] [Next.js][nextjs]
 
+# 💡 What I learned
+
+- [x] Use Context API from React.js;
+- [x] Define and implement font-size focused on acessibility;
+- [x] Concepts and use of Next.js framework;
+- [x] Use Notification API at Browser;
+- [x] Use Audio API at Browser;
+- [x] Upload a Next.js app into the web;
+- [x] Concepts related to SEO.
+
 # 🔥 Getting started
 **Node (NPM)**
 ```
