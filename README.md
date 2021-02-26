@@ -26,6 +26,14 @@ With this app, you are able to work between "25 minutes" periods, and the gain e
 - [x] [React.js][reactjs]
 - [x] [Next.js][nextjs]
 
+## 📑 Features
+
+- [x] Countdown for 25 minutes sessions (like pomodoro principles)
+- [x] Improve your levels based on your current experience
+- [x] Gain experience with each completed challenge
+- [x] Unlock a different challenge each time the countdown finishes
+- [x] Notification to alert about a new challenge
+
 # 💡 What I learned
 
 - [x] Use Context API from React.js;
