@@ -1,13 +1,18 @@
-![Move.it][logo]
+<div align="center">
 
-![Languages][languages-shield]
-![License][license-shield]
-![Bootcamp][nlw-shield]
+  ![Move.it][logo]
 
-**The best way to be productive and healthy. Both at the same time.**
+  ![Languages][languages-shield]
+  ![License][license-shield]
+  ![Bootcamp][nlw-shield]
 
-**[▶ Demonstration][move-it-url]**
+  **The best way to be productive and healthy. Both at the same time.**
 
+  ![Move.it mockup][demonstration]
+
+  **[▶ Demonstration][move-it-url]**
+
+</div>
 
 # 📚 About
 Moveit is a pomodoro based app that help you to stay healthy during working time being totally productive.
@@ -67,3 +72,4 @@ This project is under **MIT License**. Check `LICENSE` for more details.
 [yarnjs]: https://yarnpkg.com/
 [linkedin-shield]: https://img.shields.io/badge/-Cristian_Prochnow-black.svg?e&logo=linkedin&colorB=0077b4
 [linkedin-url]: https://www.linkedin.com/in/cristianprochnow
+[demonstration]: ./.github/app.gif
