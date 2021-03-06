@@ -13,7 +13,7 @@
 
   **[▶ Demonstration][move-it-url]**
 
-  [Move.it 1.0][version-1-repo-url]
+  [Move.it 1.0 →][version-1-repo-url]
 
 </div>
 
