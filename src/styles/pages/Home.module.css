@@ -40,19 +40,6 @@
   color: var(--white);
 }
 
-#homePresentation span {
-  display: flex;
-  align-items: center;
-  padding: 1.6rem 0;
-  gap: 1rem;
-  color: var(--text-highlight);
-}
-
-#homePresentation span strong {
-  width: 60%;
-  font-weight: 600;
-}
-
 #homePresentation div {
   display: flex;
   width: 100%;

@@ -1,0 +1,12 @@
+.gitHubDisclaimerContainer {
+  display: flex;
+  align-items: center;
+  padding: 1.6rem 0;
+  gap: 1rem;
+  color: var(--text-highlight);
+}
+
+.gitHubDisclaimerContainer strong {
+  width: 60%;
+  font-weight: 600;
+}

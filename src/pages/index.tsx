@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { GitHubDisclaimer } from '../components/GithubDisclaimer'
 import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
@@ -14,10 +15,7 @@ export default function Home() {
 
         <h1>Bem-vindo</h1>
 
-        <span>
-          <img src="./icons/github.svg" alt="Github"/>
-          <strong>Faça login com seu Github para começar</strong>
-        </span>
+        <GitHubDisclaimer />
 
         <div>
           <input
