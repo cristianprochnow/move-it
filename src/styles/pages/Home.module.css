@@ -1,24 +1,114 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  max-width: 992px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-}
-
-.container section {
-  flex: 1;
+.homeContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6.25rem;
-  align-content: center;
-  margin-top: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--blue);
 }
 
-@media (max-width: 768px) {
-  .container section {
+#heroImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#heroImage img {
+  object-fit: cover;
+  width: 100%;
+}
+
+#homePresentation {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 60%;
+  height: 100%;
+}
+
+#homePresentation > img {
+  align-self: flex-start;
+  height: 4rem;
+  margin-bottom: 6em;
+}
+
+#homePresentation h1 {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+#homePresentation span {
+  display: flex;
+  align-items: center;
+  padding: 1.6rem 0;
+  gap: 1rem;
+  color: var(--text-highlight);
+}
+
+#homePresentation span strong {
+  width: 60%;
+  font-weight: 600;
+}
+
+#homePresentation div {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+}
+
+#homePresentation div input {
+  flex: 1;
+  padding: 0 1.2rem;
+  border: 2px solid transparent;
+  border-right: 0;
+  border-radius: .25rem 0 0 .25rem;
+  color: var(--text-highlight);
+  background: linear-gradient(to right, rgba(73, 83, 184, 1), rgba(73, 83, 184, .2));
+  transition: border .3s;
+}
+
+#homePresentation div input:hover {
+  border: 2px solid var(--blue-dark);
+  border-right: 0;
+}
+
+#homePresentation div input:focus {
+  border: 2px solid var(--blue-dark);
+  border-right: 0;
+}
+
+#homePresentation div input::placeholder {
+  color: var(--text-highlight);
+}
+
+#homePresentation div button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.2rem;
+  border: 0;
+  border-radius: .25rem;
+  background: var(--blue-dark);
+  transition: filter .3s;
+}
+
+#homePresentation div button:hover {
+  filter: brightness(.9);
+}
+
+#homePresentation div button img {
+  width: 1.2rem;
+}
+
+@media (max-width: 769px) {
+  .homeContainer {
     grid-template-columns: 1fr;
-    padding-bottom: 2rem;
+  }
+
+  #heroImage {
+    display: none;
   }
 }
