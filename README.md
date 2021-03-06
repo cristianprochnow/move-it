@@ -85,7 +85,7 @@ This project is under **MIT License**. Check `LICENSE` for more details.
 [languages-shield]: https://shields.io/github/languages/count/cristianprochnow/move-it?style=flat&color=5965E0
 [license-shield]: https://shields.io/github/license/cristianprochnow/move-it?style=flat&color=5965E0
 [nlw-shield]: https://img.shields.io/static/v1?label=next%20level%20week&message=4&color=5965E0
-[version-shield]: https://img.shields.io/static/v1?label=version&message=1&color=4CD62B
+[version-shield]: https://img.shields.io/static/v1?label=version&message=2&color=4CD62B
 [reactjs]: https://reactjs.org/
 [nextjs]: https://nextjs.org/
 [nodejs]: https://nodejs.org/
