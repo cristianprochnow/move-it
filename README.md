@@ -1,6 +1,6 @@
 <div align="center">
 
-  ![Move.it][logo]
+  ![Move.it][logo] ![Version][version-1-shield]
 
   ![Languages][languages-shield]
   ![License][license-shield]
@@ -12,6 +12,8 @@
   ![Move.it mockup][demonstration]
 
   **[▶ Demonstration][move-it-url]**
+
+  [Move.it 2.0 →][version-2-repo-url]
 
 </div>
 
@@ -93,3 +95,5 @@ This project is under **MIT License**. Check `LICENSE` for more details.
 [linkedin-shield]: https://img.shields.io/badge/-Cristian_Prochnow-black.svg?e&logo=linkedin&colorB=0077b4
 [linkedin-url]: https://www.linkedin.com/in/cristianprochnow
 [demonstration]: ./.github/app.gif
+[version-2-repo-url]: https://github.com/cristianprochnow/move-it/tree/nextjs-plus
+[version-1-shield]: https://img.shields.io/badge/-1.0-5965E0
