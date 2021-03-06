@@ -83,7 +83,7 @@ Contributions are what make the open source community such an amazing place to b
 This project is under **MIT License**. Check `LICENSE` for more details.
 
 [logo]: ./public/logo-full.svg
-[move-it-url]: https://move-it-now.vercel.app/
+[move-it-url]: https://move-it-now-better.vercel.app/
 [languages-shield]: https://shields.io/github/languages/count/cristianprochnow/move-it?style=flat&color=5965E0
 [license-shield]: https://shields.io/github/license/cristianprochnow/move-it?style=flat&color=5965E0
 [nlw-shield]: https://img.shields.io/static/v1?label=next%20level%20week&message=4&color=5965E0
