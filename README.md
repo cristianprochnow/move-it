@@ -4,6 +4,7 @@
 
   ![Languages][languages-shield]
   ![License][license-shield]
+  ![App version][version-shield]
   ![Bootcamp][nlw-shield]
 
   **The best way to be productive and healthy. Both at the same time.**
@@ -83,7 +84,8 @@ This project is under **MIT License**. Check `LICENSE` for more details.
 [move-it-url]: https://move-it-now.vercel.app/
 [languages-shield]: https://shields.io/github/languages/count/cristianprochnow/move-it?style=flat&color=5965E0
 [license-shield]: https://shields.io/github/license/cristianprochnow/move-it?style=flat&color=5965E0
-[nlw-shield]: https://img.shields.io/static/v1?label=next%20level%20week&message=4&color=4CD62B
+[nlw-shield]: https://img.shields.io/static/v1?label=next%20level%20week&message=4&color=5965E0
+[version-shield]: https://img.shields.io/static/v1?label=version&message=1&color=4CD62B
 [reactjs]: https://reactjs.org/
 [nextjs]: https://nextjs.org/
 [nodejs]: https://nodejs.org/
