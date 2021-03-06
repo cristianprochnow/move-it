@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { GitHubDisclaimer } from '../components/GithubDisclaimer'
+import { GitHubDisclaimer } from '../components/GitHubDisclaimer'
 import { GitHubUsernameInputGroup } from '../components/GitHubUsernameInputGroup'
 import styles from '../styles/pages/Home.module.css'
 
