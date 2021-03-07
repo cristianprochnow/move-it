@@ -8,5 +8,6 @@
 
 .gitHubDisclaimerContainer strong {
   width: 60%;
+  line-height: 1.6rem;
   font-weight: 600;
 }
