@@ -8,6 +8,7 @@ import { Countdown } from '../components/Countdown';
 import { ChallengeBox } from '../components/ChallengeBox';
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
+import { SideMenuBar } from '../components/SideMenuBar';
 
 interface HomeProps {
   level: number
@@ -26,6 +27,8 @@ export default function App({
       currentExperience={currentExperience}
       completedChallenges={completedChallenges}
     >
+      <SideMenuBar />
+
       <div className={styles.container}>
         <Head>
           <title>App | Move.it</title>
