@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { FiArrowRight } from 'react-icons/fi'
 import styles from '../styles/components/GitHubUsernameInputGroup.module.css'
 
 export function GitHubUsernameInputGroup() {
@@ -34,7 +35,7 @@ export function GitHubUsernameInputGroup() {
         }
         onClick={handleAuthenticateUser}
       >
-        <img src="./icons/arrow-right.svg" alt="Go to next page"/>
+        <FiArrowRight size={24} />
       </button>
     </div>
   )

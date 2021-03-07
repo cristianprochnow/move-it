@@ -44,8 +44,8 @@
   filter: brightness(.9);
 }
 
-.gitHubUsernameInputGroupContainer button img {
-  width: 1.2rem;
+.gitHubUsernameInputGroupContainer button svg {
+  color: var(--white);
 }
 
 .filled {
