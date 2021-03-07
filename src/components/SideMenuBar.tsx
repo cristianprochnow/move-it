@@ -1,4 +1,5 @@
 import { FiHome, FiAward } from 'react-icons/fi'
+import { MenuButton } from './MenuButton'
 import styles from '../styles/components/SideMenuBar.module.css'
 
 export function SideMenuBar() {
@@ -7,16 +8,8 @@ export function SideMenuBar() {
       <img src="./logo.svg" alt="Move.it" />
 
       <nav>
-        <button type="button">
-          <span></span>
-
-          <FiHome size={32} />
-        </button>
-        <button type="button" className={styles.selected}>
-          <span></span>
-
-          <FiAward size={32} />
-        </button>
+        <MenuButton Icon={FiHome} isSelected={true} />
+        <MenuButton Icon={FiAward} isSelected={false} />
       </nav>
 
       <span></span>
