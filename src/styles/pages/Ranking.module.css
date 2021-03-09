@@ -17,10 +17,6 @@
   color: var(--text);
 }
 
-.tableBody {
-
-}
-
 .tableBody tr {
   background: var(--white);
   border: 0;
