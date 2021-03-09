@@ -1,0 +1,39 @@
+.rankingContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.rankingContainer h1 {
+  margin: 2rem 0;
+  color: var(--title);
+}
+
+.tableHead tr td {
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.tableBody {
+
+}
+
+.tableBody tr {
+  background: var(--white);
+  border: 0;
+}
+
+.tableBody tr td:first-child {
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+  border-radius: .3rem 0 0 .3rem;
+  border-right: 4px solid var(--background);
+}
+
+.tableBody tr td:last-child {
+  border-radius: 0 .3rem .3rem 0;
+}
