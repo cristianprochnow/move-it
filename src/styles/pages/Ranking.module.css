@@ -1,9 +1,15 @@
+.gridDefaultTemplate {
+  display: grid;
+  grid-template-columns: 1fr 6fr 3fr 2fr;
+}
+
 .rankingContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 992px;
   margin: 0 auto;
+  padding-bottom: 1rem;
 }
 
 .rankingContainer h1 {
@@ -11,25 +17,80 @@
   color: var(--title);
 }
 
-.tableHead tr td {
-  font-size: .8rem;
+.rankingContainer header {
+  width: 100%;
   text-transform: uppercase;
-  color: var(--text);
+  font-size: .8rem;
 }
 
-.tableBody tr {
-  background: var(--white);
+.rankingContainer header strong:nth-child(2) {
+  margin-left: 1rem;
+}
+
+.rankingContainer main {
+  width: 100%;
+}
+
+.rankingContainer main span.rankingItem {
+  margin-top: 1rem;
   border: 0;
+  border-radius: .5rem;
+  background: var(--white);
 }
 
-.tableBody tr td:first-child {
+.rankingContainer main span.rankingItem:not(:first-child) {
+  margin-top: .5rem;
+}
+
+.rankingItem div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.rankingItem div:nth-child(1) {
+  justify-content: center;
   font-weight: 600;
   font-size: 1.4rem;
-  text-align: center;
-  border-radius: .3rem 0 0 .3rem;
   border-right: 4px solid var(--background);
 }
 
-.tableBody tr td:last-child {
-  border-radius: 0 .3rem .3rem 0;
+.rankingItem div:nth-child(2) > img {
+  height: 4rem;
+  margin: 0 1rem;
+  border: 0;
+  border-radius: 5rem;
+  object-fit: cover;
+}
+
+.rankingItem div:nth-child(2) span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .4rem;
+}
+
+.rankingItem div:nth-child(2) span strong {
+  color: var(--title);
+  font-size: 1.2rem;
+}
+
+.rankingItem div:nth-child(2) span p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rankingItem div:nth-child(2) span p img {
+  margin-right: .6rem;
+}
+
+.rankingItem div > p {
+  font-weight: 600;
+}
+
+.rankingItem div > p > span {
+  color: var(--blue);
 }

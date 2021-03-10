@@ -59,45 +59,48 @@ export default function Ranking() {
       <div className={styles.rankingContainer}>
         <h1>Leaderboard</h1>
 
-        <table cellSpacing={0}>
-          <thead className={styles.tableHead}>
-            <tr>
-              <td><strong>Posição</strong></td>
-              <td><strong>Usuário</strong></td>
-              <td><strong>Desafios</strong></td>
-              <td><strong>Experiência</strong></td>
-            </tr>
-          </thead>
-          <tbody className={styles.tableBody}>
-            {
-              ranking.map(({
-                avatar,
-                name,
-                level,
-                completedChallenges,
-                experience
-              }, position) => (
-                <tr>
-                  <td id={styles.position}>{position + 1}</td>
-                  <td id={styles.userInformation}>
-                    <img src={avatar} alt={name} />
+        <header className={styles.gridDefaultTemplate}>
+          <strong>Posição</strong>
+          <strong>Usuário</strong>
+          <strong>Desafios</strong>
+          <strong>Experiência</strong>
+        </header>
 
-                    <div>
-                      <strong>{name}</strong>
-
-                      <p>
-                        <img src="./icons/level.svg" alt="Level"/>
-                        Level {level}
-                      </p>
-                    </div>
-                  </td>
-                  <td id={styles.challenges}>{completedChallenges} completados</td>
-                  <td id={styles.experience}>{experience} xp</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
+        <main>
+          {
+            ranking.map(({
+              avatar,
+              completedChallenges,
+              experience,
+              level,
+              name
+            }, position) => (
+              <span className={`${styles.rankingItem} ${styles.gridDefaultTemplate}`}>
+                <div>{position + 1}</div>
+                <div>
+                  <img src={avatar} alt={name} />
+                  <span>
+                    <strong>{name}</strong>
+                    <p>
+                      <img src="./icons/level.svg" alt="Level" />
+                      Level {level}
+                    </p>
+                  </span>
+                </div>
+                <div>
+                  <p>
+                    <span>{completedChallenges}</span> completados
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <span>{experience}</span> xp
+                  </p>
+                </div>
+              </span>
+            ))
+          }
+        </main>
       </div>
     </>
   )
