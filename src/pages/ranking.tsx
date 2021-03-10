@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { RankingItem } from '../components/RankingItem'
 import { SideMenuBar } from '../components/SideMenuBar'
 import styles from '../styles/pages/Ranking.module.css'
 
@@ -75,29 +76,15 @@ export default function Ranking() {
               level,
               name
             }, position) => (
-              <span className={`${styles.rankingItem} ${styles.gridDefaultTemplate}`}>
-                <div>{position + 1}</div>
-                <div>
-                  <img src={avatar} alt={name} />
-                  <span>
-                    <strong>{name}</strong>
-                    <p>
-                      <img src="./icons/level.svg" alt="Level" />
-                      Level {level}
-                    </p>
-                  </span>
-                </div>
-                <div>
-                  <p>
-                    <span>{completedChallenges}</span> completados
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    <span>{experience}</span> xp
-                  </p>
-                </div>
-              </span>
+              <RankingItem
+                avatar={avatar}
+                completedChallenges={completedChallenges}
+                experience={experience}
+                key={position}
+                level={level}
+                name={name}
+                position={position}
+              />
             ))
           }
         </main>

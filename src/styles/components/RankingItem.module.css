@@ -1,0 +1,65 @@
+span.rankingItem {
+  display: grid;
+  grid-template-columns: 1fr 6fr 3fr 2fr;
+  margin-top: 1rem;
+  border: 0;
+  border-radius: .5rem;
+  background: var(--white);
+}
+
+.rankingItem:not(:first-child) {
+  margin-top: .5rem;
+}
+
+.rankingItem div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.rankingItem div:nth-child(1) {
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-right: 4px solid var(--background);
+}
+
+.rankingItem div:nth-child(2) > img {
+  height: 4rem;
+  margin: 0 1rem;
+  border: 0;
+  border-radius: 5rem;
+  object-fit: cover;
+}
+
+.rankingItem div:nth-child(2) span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .4rem;
+}
+
+.rankingItem div:nth-child(2) span strong {
+  color: var(--title);
+  font-size: 1.2rem;
+}
+
+.rankingItem div:nth-child(2) span p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rankingItem div:nth-child(2) span p img {
+  margin-right: .6rem;
+}
+
+.rankingItem div > p {
+  font-weight: 600;
+}
+
+.rankingItem div > p > span {
+  color: var(--blue);
+}
