@@ -18,7 +18,9 @@ export function SideMenuBar() {
     }
   }
 
-  function handleLogOut() {}
+  function handleLogOut() {
+    router.push('/')
+  }
 
   useEffect(() => {
     setActualRoute(router.pathname)
