@@ -4,7 +4,7 @@ import styles from '../styles/components/MenuButton.module.css'
 
 interface MenuButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   Icon: IconType
-  isSelected: boolean
+  isSelected?: boolean
 }
 
 export function MenuButton({ Icon, isSelected, ...rest }: MenuButtonProps) {

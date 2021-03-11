@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FiHome, FiAward } from 'react-icons/fi'
+import { FiHome, FiAward, FiLogOut } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import { MenuButton } from './MenuButton'
 import styles from '../styles/components/SideMenuBar.module.css'
@@ -17,6 +17,8 @@ export function SideMenuBar() {
       router.push(destinyRoute)
     }
   }
+
+  function handleLogOut() {}
 
   useEffect(() => {
     setActualRoute(router.pathname)
@@ -39,7 +41,12 @@ export function SideMenuBar() {
         />
       </nav>
 
-      <span></span>
+      <span>
+        <MenuButton
+          Icon={FiLogOut}
+          onClick={handleLogOut}
+        />
+      </span>
     </div>
   )
 }
