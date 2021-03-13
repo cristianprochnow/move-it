@@ -58,7 +58,7 @@ The [Yarn][yarnjs] package manager is optional. Based on the NPM, it is a bit di
 
 ## ⚡ Setup
 
-### Database connection (MongDB)
+### Database connection (MongoDB)
 
 Create a `.env` file at project root directory and insert the code below:
 ```env
