@@ -46,7 +46,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       joinedAt: new Date()
     })
 
-    return response.status(203).json({ signUpId: registerResponse.insertedId })
+    return response.status(201).json({ signUpId: registerResponse.insertedId })
   } catch (error) {
     return response.status(500).json({ error })
   }

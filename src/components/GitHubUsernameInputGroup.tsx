@@ -10,21 +10,25 @@ export function GitHubUsernameInputGroup() {
 
   const isGitHubUsernameFilled = (githubNickname !== '') ? true : false
 
-  function handleAuthenticateUser() {
-    if (!isGitHubUsernameFilled) return
+  async function handleAuthenticateUser() {
+    async function signUpUser(githubUsername: string) {
+      try {
+        await axios.post('/api/signup', { githubUsername })
+      } catch (error) {
+        console.error(error)
 
-    signUpUser(githubNickname)
-
-    function signUpUser(githubUsername: string) {
-      axios
-        .post('/api/signup', { githubUsername })
-        .then(({ data }) => console.table(data))
-        .catch(error => console.error(error))
+        return
+      }
     }
 
     function redirectToApp() {
       router.push('/app')
     }
+
+    if (!isGitHubUsernameFilled) return
+
+    await signUpUser(githubNickname)
+    redirectToApp()
   }
 
   return (
