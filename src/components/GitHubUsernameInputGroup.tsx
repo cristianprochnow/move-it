@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { FiArrowRight } from 'react-icons/fi'
+import axios from 'axios'
 import styles from '../styles/components/GitHubUsernameInputGroup.module.css'
 
 export function GitHubUsernameInputGroup() {
@@ -12,7 +13,14 @@ export function GitHubUsernameInputGroup() {
   function handleAuthenticateUser() {
     if (!isGitHubUsernameFilled) return
 
-    redirectToApp()
+    signUpUser(githubNickname)
+
+    function signUpUser(githubUsername: string) {
+      axios
+        .post('/api/signup', { githubUsername })
+        .then(({ data }) => console.table(data))
+        .catch(error => console.error(error))
+    }
 
     function redirectToApp() {
       router.push('/app')
