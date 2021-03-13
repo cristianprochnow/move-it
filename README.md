@@ -46,8 +46,30 @@ With this app, you are able to work between "25 minutes" periods, and the gain e
 - [x] Use Audio API at Browser
 - [x] Upload a Next.js app into the web
 - [x] Concepts related to SEO
+- [x] Quick implement a MongoDB connection
+- [x] Next.js Rest API routing
 
 # 🔥 Getting started
+
+## ⚙ Prerequisites
+To run this project you must have [Node.js][nodejs] installed in your machine.
+
+The [Yarn][yarnjs] package manager is optional. Based on the NPM, it is a bit different at some factors, improving some issues that NPM would have. But, if you desire, can use NPM without doubt, currently they are practically worth.
+
+## ⚡ Setup
+
+### Database connection (MongDB)
+
+Create a `.env` file at project root directory and insert the code below:
+```env
+MONGOBD_URI=<yourMongoDBConnectionURL>
+```
+To fill `MONGODB_URI`, create an account into MongoBD Atlas, then create a database with name you desire and use `connection URI` offered by the site to connect with your client.
+
+For more informations about the steps, access [MongoDB Documentation](https://docs.mongodb.com/).
+
+### Run website
+
 **Node (NPM)**
 ```
 npm install
@@ -60,11 +82,6 @@ yarn
 
 yarn dev
 ```
-
-## ⚙ Prerequisites
-To run this project you must have [Node.js][nodejs] installed in your machine.
-
-The [Yarn][yarnjs] package manager is optional. Based on the NPM, it is a bit different at some factors, improving some issues that NPM would have. But, if you desire, can use NPM without doubt, currently they are practically worth.
 
 # 🤟🏼 Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
