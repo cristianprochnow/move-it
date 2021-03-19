@@ -18,6 +18,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   try {
     const registeredUser = await collection.findOne({ githubUsername })
 
+    if (!registeredUser) throw new Error()
+
     return response
       .status(200)
       .json(registeredUser)

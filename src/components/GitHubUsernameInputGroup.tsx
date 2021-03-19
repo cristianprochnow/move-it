@@ -13,7 +13,9 @@ export function GitHubUsernameInputGroup() {
   async function handleAuthenticateUser() {
     async function signUpUser(githubUsername: string) {
       try {
-        await axios.post('/api/signup', { githubUsername })
+        const userResponse = await axios.post('/api/login', { githubUsername })
+
+        console.log(userResponse.data)
       } catch (error) {
         console.error(error)
 
