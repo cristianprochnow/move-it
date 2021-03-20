@@ -11,26 +11,13 @@ export function GitHubUsernameInputGroup() {
   const isGitHubUsernameFilled = (githubNickname !== '') ? true : false
 
   async function handleAuthenticateUser() {
-    async function signUpUser(githubUsername: string) {
-      try {
-        const userResponse = await axios.post('/api/login', { githubUsername })
+    if (!isGitHubUsernameFilled) return
 
-        console.log(userResponse.data)
-      } catch (error) {
-        console.error(error)
-
-        return
-      }
-    }
+    redirectToApp()
 
     function redirectToApp() {
       router.push('/app')
     }
-
-    if (!isGitHubUsernameFilled) return
-
-    await signUpUser(githubNickname)
-    redirectToApp()
   }
 
   return (
