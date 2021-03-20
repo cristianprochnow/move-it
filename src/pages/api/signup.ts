@@ -8,6 +8,10 @@ let cachedDatabaseConnection: Db = null
 
 export default async (request: VercelRequest, response: VercelResponse) => {
   const { githubUsername } = request.body
+  const level = 0,
+    completedChallenges = 0,
+    currentExperience = 0,
+    joinedAt = new Date()
 
   try {
     await axios.get(`https://api.github.com/users/${githubUsername}`)
@@ -23,20 +27,30 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   cachedDatabaseConnection = await connectToDatabase(MONGODB_URI, cachedDatabaseConnection)
   const collection = cachedDatabaseConnection.collection('app')
 
+  const existentUser = await collection.findOne({githubUsername})
+
+  if (existentUser) return response
+    .status(202)
+    .json(existentUser)
+
   try {
     const registerResponse = await collection.insertOne({
       githubUsername,
-      level: 0,
-      completedChallenges: 0,
-      currentExperience: 0,
-      joinedAt: new Date()
+      level,
+      completedChallenges,
+      currentExperience,
+      joinedAt
     })
 
     return response
       .status(201)
       .json({
         signUpId: registerResponse.insertedId,
-        githubUsername
+        githubUsername,
+        level,
+        completedChallenges,
+        currentExperience,
+        joinedAt
       })
   } catch (error) {
     return response
