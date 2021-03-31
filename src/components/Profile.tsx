@@ -1,15 +1,25 @@
 import { useChallenges } from '../hooks/useChallenges'
 import styles from '../styles/components/Profile.module.css'
 
-export function Profile() {
+interface ProfileProps {
+  nickname: string
+  name: string
+  avatar: string
+}
+
+export function Profile({
+  avatar,
+  name,
+  nickname
+}: ProfileProps) {
   const { level } = useChallenges()
 
   return (
     <div className={styles.profileContainer}>
-      <img src="https://github.com/cristianprochnow.png" alt="Cristian Prochnow"/>
+      <img src={avatar} alt={nickname} />
 
       <div>
-        <strong>Cristian Prochnow</strong>
+        <strong>{name}</strong>
         <p>
           <img src="icons/level.svg" alt="Level"/>
           Level {level}
