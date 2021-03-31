@@ -47,6 +47,20 @@ export function ChallengesProvider({
   function levelUp() {
     setLevel(level + 1)
     setIsLevelUpModalOpen(true)
+
+    updateSavedLevel(level, getUserIdFromCookie())
+      .then(() => console.info('Saved level updated!'))
+      .catch(() => console.error('That it was not possible to update saved level now.'))
+
+    function getUserIdFromCookie() {
+      return Cookies.get(COOKIES_NAMES.userId)
+    }
+
+    async function updateSavedLevel(level: number, userId: string) {
+      const routeUrl = `/api/level/${userId}`
+
+      await axios.put(routeUrl, {level})
+    }
   }
 
   function startNewChallenge() {

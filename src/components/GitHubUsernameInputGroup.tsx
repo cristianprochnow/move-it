@@ -16,6 +16,7 @@ export function GitHubUsernameInputGroup() {
 
   async function handleAuthenticateUser() {
     interface SignupResponseData {
+      userId: string
       gitHubUsername: string
       level: number
       currentExperience: number
@@ -45,6 +46,7 @@ export function GitHubUsernameInputGroup() {
     }
 
     function setUserDataCookies(userData: SignupResponseData) {
+      Cookies.set(COOKIES_NAMES.userId, userData.userId)
       Cookies.set(COOKIES_NAMES.gitHubUsername, userData.gitHubUsername)
       Cookies.set(COOKIES_NAMES.level, String(userData.level))
       Cookies.set(COOKIES_NAMES.currentExperience, String(userData.currentExperience))

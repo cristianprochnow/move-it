@@ -9,6 +9,7 @@ let cachedDatabaseConnection: Db = null
 
 export default async (request: VercelRequest, response: VercelResponse) => {
   interface RegisterResponseData {
+    userId: string
     gitHubUsername: string
     level: number
     completedChallenges: number
@@ -41,6 +42,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   if (existentUser) return response
     .status(202)
     .json({
+      userId: existentUser.userId,
       gitHubUsername: existentUser.gitHubUsername,
       level: existentUser.level,
       currentExperience: existentUser.currentExperience,
@@ -60,6 +62,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     return response
       .status(201)
       .json({
+        userId,
         gitHubUsername,
         level,
         completedChallenges,
