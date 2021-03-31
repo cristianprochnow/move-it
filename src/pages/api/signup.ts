@@ -2,6 +2,7 @@ import { VercelRequest, VercelResponse } from '@vercel/node'
 import axios from 'axios'
 import { Db } from 'mongodb'
 import { connectToDatabase } from '../../utils/connectToDatabase'
+import { generateUUID } from '../../utils/generateUUID'
 
 const { MONGODB_URI } = process.env
 let cachedDatabaseConnection: Db = null
@@ -18,7 +19,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   const level = 0,
     completedChallenges = 0,
     currentExperience = 0,
-    joinedAt = new Date()
+    joinedAt = new Date(),
+    userId = generateUUID()
 
   try {
     await axios.get(`https://api.github.com/users/${gitHubUsername}`)
@@ -47,6 +49,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
   try {
     await collection.insertOne({
+      userId,
       gitHubUsername,
       level,
       completedChallenges,

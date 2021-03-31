@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import challenges from '../../challenges.json'
 import { COOKIES_NAMES } from '../constants/cookies'
 import { LevelUpModal } from '../components/LevelUpModal'
+import axios from 'axios'
 
 interface ChallengesContextData {
   level: number
