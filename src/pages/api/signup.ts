@@ -7,6 +7,13 @@ const { MONGODB_URI } = process.env
 let cachedDatabaseConnection: Db = null
 
 export default async (request: VercelRequest, response: VercelResponse) => {
+  interface RegisterResponseData {
+    githubUsername: string
+    level: number
+    completedChallenges: number
+    currentExperience: number
+  }
+
   const { githubUsername } = request.body
   const level = 0,
     completedChallenges = 0,
@@ -27,11 +34,16 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   cachedDatabaseConnection = await connectToDatabase(MONGODB_URI, cachedDatabaseConnection)
   const collection = cachedDatabaseConnection.collection('app')
 
-  const existentUser = await collection.findOne({githubUsername})
+  const existentUser: RegisterResponseData = await collection.findOne({githubUsername})
 
   if (existentUser) return response
     .status(202)
-    .json(existentUser)
+    .json({
+      githubUsername: existentUser.githubUsername,
+      level: existentUser.level,
+      currentExperience: existentUser.currentExperience,
+      completedChallenges: existentUser.completedChallenges
+    })
 
   try {
     const registerResponse = await collection.insertOne({
@@ -45,12 +57,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     return response
       .status(201)
       .json({
-        signUpId: registerResponse.insertedId,
         githubUsername,
         level,
         completedChallenges,
-        currentExperience,
-        joinedAt
+        currentExperience
       })
   } catch (error) {
     return response
