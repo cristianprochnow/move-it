@@ -8,25 +8,25 @@ let cachedDatabaseConnection: Db = null
 
 export default async (request: VercelRequest, response: VercelResponse) => {
   interface RegisterResponseData {
-    githubUsername: string
+    gitHubUsername: string
     level: number
     completedChallenges: number
     currentExperience: number
   }
 
-  const { githubUsername } = request.body
+  const { gitHubUsername } = request.body
   const level = 0,
     completedChallenges = 0,
     currentExperience = 0,
     joinedAt = new Date()
 
   try {
-    await axios.get(`https://api.github.com/users/${githubUsername}`)
+    await axios.get(`https://api.github.com/users/${gitHubUsername}`)
   } catch (error) {
     return response
       .status(404)
       .json({
-        error: `${githubUsername} was not a valid GitHub username`,
+        error: `${gitHubUsername} was not a valid GitHub username`,
         details: error
       })
   }
@@ -34,20 +34,20 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   cachedDatabaseConnection = await connectToDatabase(MONGODB_URI, cachedDatabaseConnection)
   const collection = cachedDatabaseConnection.collection('app')
 
-  const existentUser: RegisterResponseData = await collection.findOne({githubUsername})
+  const existentUser: RegisterResponseData = await collection.findOne({gitHubUsername})
 
   if (existentUser) return response
     .status(202)
     .json({
-      githubUsername: existentUser.githubUsername,
+      gitHubUsername: existentUser.gitHubUsername,
       level: existentUser.level,
       currentExperience: existentUser.currentExperience,
       completedChallenges: existentUser.completedChallenges
     })
 
   try {
-    const registerResponse = await collection.insertOne({
-      githubUsername,
+    await collection.insertOne({
+      gitHubUsername,
       level,
       completedChallenges,
       currentExperience,
@@ -57,7 +57,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     return response
       .status(201)
       .json({
-        githubUsername,
+        gitHubUsername,
         level,
         completedChallenges,
         currentExperience

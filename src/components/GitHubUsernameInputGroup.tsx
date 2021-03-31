@@ -4,6 +4,7 @@ import { FiArrowRight } from 'react-icons/fi'
 import ReactLoading from 'react-loading'
 import axios, { AxiosResponse } from 'axios'
 import Cookies from 'js-cookie'
+import { COOKIES_NAMES } from '../constants/cookies'
 import styles from '../styles/components/GitHubUsernameInputGroup.module.css'
 
 export function GitHubUsernameInputGroup() {
@@ -15,7 +16,7 @@ export function GitHubUsernameInputGroup() {
 
   async function handleAuthenticateUser() {
     interface SignupResponseData {
-      githubUsername: string
+      gitHubUsername: string
       level: number
       currentExperience: number
       completedChallenges: number
@@ -39,15 +40,15 @@ export function GitHubUsernameInputGroup() {
       router.push('/app')
     }
 
-    async function signUp(githubUsername: string): Promise<AxiosResponse<SignupResponseData>> {
-      return await axios.post('/api/signup', {githubUsername})
+    async function signUp(gitHubUsername: string): Promise<AxiosResponse<SignupResponseData>> {
+      return await axios.post('/api/signup', {gitHubUsername})
     }
 
     function setUserDataCookies(userData: SignupResponseData) {
-      Cookies.set('githubUsername', userData.githubUsername)
-      Cookies.set('level', String(userData.level))
-      Cookies.set('currentExperience', String(userData.currentExperience))
-      Cookies.set('completedChallenges', String(userData.completedChallenges))
+      Cookies.set(COOKIES_NAMES.gitHubUsername, userData.gitHubUsername)
+      Cookies.set(COOKIES_NAMES.level, String(userData.level))
+      Cookies.set(COOKIES_NAMES.currentExperience, String(userData.currentExperience))
+      Cookies.set(COOKIES_NAMES.completedChallenges, String(userData.completedChallenges))
     }
   }
 

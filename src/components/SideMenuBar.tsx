@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { FiHome, FiAward, FiLogOut } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import { MenuButton } from './MenuButton'
+import Cookies from 'js-cookie'
 import styles from '../styles/components/SideMenuBar.module.css'
+import { COOKIES_NAMES } from '../constants/cookies'
 
 export function SideMenuBar() {
   const router = useRouter()
@@ -19,7 +21,19 @@ export function SideMenuBar() {
   }
 
   function handleLogOut() {
-    router.push('/')
+    cleanSession()
+    redirectToHome()
+
+    function cleanSession() {
+      Cookies.remove(COOKIES_NAMES.completedChallenges)
+      Cookies.remove(COOKIES_NAMES.currentExperience)
+      Cookies.remove(COOKIES_NAMES.gitHubUsername)
+      Cookies.remove(COOKIES_NAMES.level)
+    }
+
+    function redirectToHome() {
+      router.push('/')
+    }
   }
 
   useEffect(() => {

@@ -71,13 +71,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     level,
     currentExperience,
     completedChallenges,
-    githubUsername
+    gitHubUsername
   } = context.req.cookies
 
-  const { data } = await fetchGitHubDataByUser(githubUsername)
+  const { data } = await fetchGitHubDataByUser(gitHubUsername)
 
   const userGitHubData = {
-    nickname: githubUsername,
+    nickname: gitHubUsername,
     name: data.name,
     avatar: data.avatar_url
   }

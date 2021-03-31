@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
 import challenges from '../../challenges.json'
+import { COOKIES_NAMES } from '../constants/cookies'
 import { LevelUpModal } from '../components/LevelUpModal'
 
 interface ChallengesContextData {
@@ -97,9 +98,9 @@ export function ChallengesProvider({
   }, [])
 
   useEffect(() => {
-    Cookies.set('level', String(level))
-    Cookies.set('currentExperience', String(currentExperience))
-    Cookies.set('completedChallenges', String(completedChallenges))
+    Cookies.set(COOKIES_NAMES.level, String(level))
+    Cookies.set(COOKIES_NAMES.currentExperience, String(currentExperience))
+    Cookies.set(COOKIES_NAMES.completedChallenges, String(completedChallenges))
   }, [level, currentExperience, completedChallenges])
 
   return (
