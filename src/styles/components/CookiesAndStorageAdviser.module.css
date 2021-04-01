@@ -1,0 +1,52 @@
+.cookiesAndStorageAdviserContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 26rem;
+  margin: 0 0 1rem 1rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: .25rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.cookiesAndStorageAdviserContainer > div strong {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.cookiesAndStorageAdviserContainer > div p {
+  margin: .4rem 0;
+  line-height: 1.6rem;
+}
+
+.cookiesAndStorageAdviserContainer > div span {
+  font-size: .8rem;
+  filter: contrast(0);
+}
+
+.cookiesAndStorageAdviserContainer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.2rem;
+  margin-top: 2.4rem;
+  border: 0;
+  border-radius: .25rem;
+  font-weight: 600;
+  background: var(--blue);
+  color: var(--white);
+  transition: background .3s;
+}
+
+.cookiesAndStorageAdviserContainer button svg {
+  margin-right: .4rem;
+  color: var(--white);
+}
+
+.cookiesAndStorageAdviserContainer button:hover {
+  background: var(--blue-dark);
+}
