@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { CookiesAndStorageAdviser } from '../components/CookiesAndStorageAdviser'
 import { GitHubDisclaimer } from '../components/GitHubDisclaimer'
 import { GitHubUsernameInputGroup } from '../components/GitHubUsernameInputGroup'
 import styles from '../styles/pages/Home.module.css'
@@ -9,6 +10,8 @@ export default function Home() {
       <Head>
         <title>Início | Move.it</title>
       </Head>
+
+      <CookiesAndStorageAdviser />
 
       <div id={styles.heroImage}>
         <img src="./hero-image.svg" alt="Hero image"/>

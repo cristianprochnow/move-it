@@ -48,6 +48,10 @@ With this app, you are able to work between "25 minutes" periods, and the gain e
 - [x] Concepts related to SEO
 - [x] Quick implement a MongoDB connection
 - [x] Next.js Rest API routing
+- [x] Use `mongodb` drive
+- [x] Use Server Side Rendering with Next.js to predefine data
+- [x] Create and use dynamic routes at Next.js
+- [x] Manage cookies in the web application
 
 # 🔥 Getting started
 
