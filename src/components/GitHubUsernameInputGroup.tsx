@@ -31,6 +31,12 @@ export function GitHubUsernameInputGroup() {
       setUserDataCookies(data)
     } catch (error) {
       console.error(error)
+
+      alert('😅 Invalid GitHub username.')
+
+      setLoading(false)
+
+      return
     }
 
     setLoading(false)
