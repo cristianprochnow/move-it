@@ -9,11 +9,6 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   const {userId} = request.query
   const {level} = request.body
 
-  console.table({
-    userId,
-    level
-  })
-
   cachedDatabaseConnection = await connectToDatabase(MONGODB_URI, cachedDatabaseConnection)
 
   const collection = cachedDatabaseConnection.collection('app')
