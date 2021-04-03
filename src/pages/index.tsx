@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { CookiesAndStorageAdviser } from '../components/CookiesAndStorageAdviser'
 import { GitHubDisclaimer } from '../components/GitHubDisclaimer'
 import { GitHubUsernameInputGroup } from '../components/GitHubUsernameInputGroup'
+import { ToastNotification } from '../components/ToastNotification'
 import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
 
       <CookiesAndStorageAdviser />
+      <ToastNotification />
 
       <div id={styles.heroImage}>
         <img src="./hero-image.svg" alt="Hero image"/>
