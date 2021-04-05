@@ -13,7 +13,10 @@ export default function Home() {
       </Head>
 
       <CookiesAndStorageAdviser />
-      <ToastNotification />
+      <ToastNotification
+        type="information"
+        message="Por favor, coloque seu nome"
+      />
 
       <div id={styles.heroImage}>
         <img src="./hero-image.svg" alt="Hero image"/>

@@ -1,9 +1,54 @@
-.toastNotificationContainer {}
+.toastNotificationContainer {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: .25rem;
+  color: var(--white);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  animation: slidein .5s;
+}
 
-.info {}
+.toastNotificationContainer p {
+  max-width: 20rem;
+  line-height: 1.6rem;
+}
 
-.success {}
+.toastNotificationContainer button {
+  margin-left: 3.2rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
 
-.warning {}
+.information {
+  background: #3598DB;
+}
 
-.error {}
+.success {
+  background: #4CB050;
+}
+
+.warning {
+  background: #FF9700;
+}
+
+.error {
+  background: #E51C24;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
