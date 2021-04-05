@@ -3,7 +3,7 @@ import { GenIcon } from 'react-icons'
 import { FiAlertCircle, FiCheckCircle, FiInfo, FiX, FiXCircle } from 'react-icons/fi'
 import styles from '../styles/components/ToastNotification.module.css'
 
-interface ToastNotificationProps {
+export interface ToastNotificationProps {
   type: 'information' | 'success' | 'warning' | 'error'
   message: string
 }
