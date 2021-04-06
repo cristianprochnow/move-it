@@ -11,7 +11,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   const collection = cachedDatabaseConnection.collection('app')
 
   try {
-    const users = await collection.distinct('gitHubUsername')
+    const users: string[] = await collection.distinct('gitHubUsername')
 
     return response
       .status(200)
