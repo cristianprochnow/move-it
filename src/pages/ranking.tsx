@@ -1,10 +1,8 @@
-import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import axios, { AxiosResponse } from 'axios'
 import { RankingItem } from '../components/RankingItem'
 import { SideMenuBar } from '../components/SideMenuBar'
 import styles from '../styles/pages/Ranking.module.css'
-import { fetchUsers } from '../utils/api/fetchUsers'
+import { useState } from 'react'
 
 const ranking = [
   {
@@ -51,16 +49,9 @@ const ranking = [
   }
 ]
 
-interface RankingProps {
-  users: Array<UserData>
-}
+export default function Ranking() {
+  const [usersGitHubData, setUsersGitHubData] = useState([])
 
-interface UserData {
-  avatar_url: string;
-  name: string
-}
-
-export default function Ranking({users}: RankingProps) {
   return (
     <>
       <Head>
@@ -81,16 +72,19 @@ export default function Ranking({users}: RankingProps) {
 
         <main>
           {
-            users.map(({
-              avatar_url,
+            ranking.map(({
+              avatar,
+              completedChallenges,
+              experience,
+              level,
               name
             }, position) => (
               <RankingItem
-                avatar={avatar_url}
-                completedChallenges={0}
-                experience={0}
+                avatar={avatar}
+                completedChallenges={completedChallenges}
+                experience={experience}
                 key={position}
-                level={0}
+                level={level}
                 name={name}
                 position={position}
               />
@@ -100,12 +94,4 @@ export default function Ranking({users}: RankingProps) {
       </div>
     </>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-
-
-  return {
-    props: {}
-  }
 }
