@@ -7,6 +7,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     name: string
   }
 
+  const usersGitHubData: Array<UserGitHubData> = []
   /**
    * 'usersNames' is an array in string format
    * so it will receive 'first users, second user, third user'
@@ -14,16 +15,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
    */
   const {usersNames} = request.body
   const usersList = turnUsersStringIntoArray(usersNames)
+  const theTopTenUsers = selectTheTopTenUsers(usersList)
 
   try {
-    const usersGitHubData = usersList.map(async user => {
-      const {name, avatar_url}: UserGitHubData = await fetchUserGitHubData(user)
-
-      return {
-        name,
-        avatar_url
-      }
-    })
+    await processArrayForPromisesWorking(theTopTenUsers)
 
     return response
       .status(200)
@@ -38,6 +33,32 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       })
   }
 
+  async function processArrayForPromisesWorking(usersArray: Array<string>) {
+    for (let user of usersArray) {
+      const {name, avatar_url}: UserGitHubData = await fetchUserGitHubData(user)
+
+      usersGitHubData.push({
+        name,
+        avatar_url
+      })
+    }
+  }
+
+  function turnUsersStringIntoArray(userNames: string) {
+    const usersArray = userNames
+      .split(',')
+      .map(userName => userName.trim())
+
+    return usersArray
+  }
+
+  function selectTheTopTenUsers(usersNamesList: Array<string>) {
+    const topTenUsers = usersNamesList
+      .filter((_, position) => position < 10)
+
+    return topTenUsers
+  }
+
   async function fetchUserGitHubData(userName: string) {
     const userGitHubUri = getCustomGitHubUri(userName)
     const userGitHubData = await axios.get(userGitHubUri)
@@ -49,13 +70,5 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
       return customUri
     }
-  }
-
-  function turnUsersStringIntoArray(userNames: string) {
-    const usersArray = userNames
-      .split(',')
-      .map(userName => userName.trim())
-
-    return usersArray
   }
 }
