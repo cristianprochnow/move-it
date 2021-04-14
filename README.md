@@ -52,7 +52,7 @@ With this app, you are able to work between "25 minutes" periods, and the gain e
 - [x] Use Server Side Rendering with Next.js to predefine data
 - [x] Create and use dynamic routes at Next.js
 - [x] Manage cookies in the web application
-- [ ] Use `useSWR` hook
+- [x] Use `useSWR` hook
 
 # 🔥 Getting started
 
