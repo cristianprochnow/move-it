@@ -1,7 +1,10 @@
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import axios, { AxiosResponse } from 'axios'
 import { RankingItem } from '../components/RankingItem'
 import { SideMenuBar } from '../components/SideMenuBar'
 import styles from '../styles/pages/Ranking.module.css'
+import { fetchUsers } from '../utils/api/fetchUsers'
 
 const ranking = [
   {
@@ -48,7 +51,16 @@ const ranking = [
   }
 ]
 
-export default function Ranking() {
+interface RankingProps {
+  users: Array<UserData>
+}
+
+interface UserData {
+  avatar_url: string;
+  name: string
+}
+
+export default function Ranking({users}: RankingProps) {
   return (
     <>
       <Head>
@@ -69,19 +81,16 @@ export default function Ranking() {
 
         <main>
           {
-            ranking.map(({
-              avatar,
-              completedChallenges,
-              experience,
-              level,
+            users.map(({
+              avatar_url,
               name
             }, position) => (
               <RankingItem
-                avatar={avatar}
-                completedChallenges={completedChallenges}
-                experience={experience}
+                avatar={avatar_url}
+                completedChallenges={0}
+                experience={0}
                 key={position}
-                level={level}
+                level={0}
                 name={name}
                 position={position}
               />
@@ -91,4 +100,12 @@ export default function Ranking() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+
+
+  return {
+    props: {}
+  }
 }
