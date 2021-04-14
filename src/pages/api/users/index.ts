@@ -3,15 +3,15 @@ import axios from 'axios'
 import { Collection, Db } from 'mongodb'
 import { connectToDatabase } from '../../../utils/connectToDatabase'
 
+export interface UserGitHubData {
+  avatar_url: string
+  name: string
+}
+
 const {MONGODB_URI} = process.env
 let cachedDatabaseConnection: Db = null
 
 export default async (_, response: VercelResponse) => {
-  interface UserGitHubData {
-    avatar_url: string
-    name: string
-  }
-
   cachedDatabaseConnection = await connectToDatabase(
     MONGODB_URI,
     cachedDatabaseConnection

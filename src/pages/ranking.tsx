@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import Head from 'next/head'
+import useSWR, { SWRResponse } from 'swr'
+import { UserGitHubData } from './api/users'
+import ReactLoading from 'react-loading'
 import { RankingItem } from '../components/RankingItem'
 import { SideMenuBar } from '../components/SideMenuBar'
 import styles from '../styles/pages/Ranking.module.css'
-import { useState } from 'react'
 
 const ranking = [
   {
@@ -50,7 +53,18 @@ const ranking = [
 ]
 
 export default function Ranking() {
-  const [usersGitHubData, setUsersGitHubData] = useState([])
+  const {data}: SWRResponse<Array<UserGitHubData>, any> = useSWR('/api/users')
+
+  if (!data) {
+    return (
+      <ReactLoading
+        width={50}
+        className={styles.loadingSpinner}
+        type="spokes"
+        color="#5965E0"
+      />
+    )
+  }
 
   return (
     <>
@@ -72,19 +86,16 @@ export default function Ranking() {
 
         <main>
           {
-            ranking.map(({
-              avatar,
-              completedChallenges,
-              experience,
-              level,
+            data.map(({
+              avatar_url,
               name
             }, position) => (
               <RankingItem
-                avatar={avatar}
-                completedChallenges={completedChallenges}
-                experience={experience}
+                avatar={avatar_url}
+                completedChallenges={0}
+                experience={0}
                 key={position}
-                level={level}
+                level={0}
                 name={name}
                 position={position}
               />
