@@ -7,51 +7,6 @@ import { RankingItem } from '../components/RankingItem'
 import { SideMenuBar } from '../components/SideMenuBar'
 import styles from '../styles/pages/Ranking.module.css'
 
-const ranking = [
-  {
-    name: 'Cristian Prochnow',
-    avatar: 'https://github.com/cristianprochnow.png',
-    level: 21,
-    completedChallenges: 84,
-    experience: 111209
-  },
-  {
-    name: 'Cristian Prochnow',
-    avatar: 'https://github.com/cristianprochnow.png',
-    level: 21,
-    completedChallenges: 84,
-    experience: 111209
-  },
-  {
-    name: 'Cristian Prochnow',
-    avatar: 'https://github.com/cristianprochnow.png',
-    level: 21,
-    completedChallenges: 84,
-    experience: 111209
-  },
-  {
-    name: 'Cristian Prochnow',
-    avatar: 'https://github.com/cristianprochnow.png',
-    level: 21,
-    completedChallenges: 84,
-    experience: 111209
-  },
-  {
-    name: 'Cristian Prochnow',
-    avatar: 'https://github.com/cristianprochnow.png',
-    level: 21,
-    completedChallenges: 84,
-    experience: 111209
-  },
-  {
-    name: 'Cristian Prochnow',
-    avatar: 'https://github.com/cristianprochnow.png',
-    level: 21,
-    completedChallenges: 84,
-    experience: 111209
-  }
-]
-
 export default function Ranking() {
   const {data}: SWRResponse<Array<UserGitHubData>, any> = useSWR('/api/users')
 
