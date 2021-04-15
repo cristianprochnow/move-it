@@ -52,15 +52,15 @@ export function ChallengesProvider({
       .then(() => console.info('Saved level updated!'))
       .catch(() => console.error('That it was not possible to update saved level now.'))
 
-    function getUserIdFromCookie() {
-      return Cookies.get(COOKIES_NAMES.userId)
-    }
-
     async function updateSavedLevel(level: number, userId: string) {
       const routeUrl = `/api/level/${userId}`
 
       await axios.put(routeUrl, {level})
     }
+  }
+
+  function getUserIdFromCookie() {
+    return Cookies.get(COOKIES_NAMES.userId)
   }
 
   function startNewChallenge() {
@@ -102,6 +102,32 @@ export function ChallengesProvider({
     setCurrentExperience(finalExperience)
     setActiveChallenge(null)
     setCompletedChallenges(completedChallenges + 1)
+
+    const userId = getUserIdFromCookie()
+
+    updateSavedExperienceAndChallenges(
+      completedChallenges,
+      currentExperience,
+      userId
+    )
+      .then(() => console.info('Experience and challenges updated successfully!'))
+      .catch(() => console.error('Sorry, something went wrong while updating experience and challenges.'))
+
+    async function updateSavedExperienceAndChallenges(
+      completedChallenges: number,
+      currentExperience: number,
+      userId: string
+    ) {
+      const apiRoute = `/api/challenge-xp/${userId}`
+
+      await axios.put(
+        apiRoute,
+        {
+          completedChallenges,
+          currentExperience
+        }
+      )
+    }
   }
 
   function closeLevelUpModal() {
