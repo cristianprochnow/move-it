@@ -58,23 +58,23 @@ export default function Ranking() {
   if (!data) {
     return (
       <>
-      <Head>
-        <title>Ranking | Move.it</title>
-      </Head>
+        <Head>
+          <title>Ranking | Move.it</title>
+        </Head>
 
-      <SideMenuBar />
+        <SideMenuBar />
 
-      <div className={styles.rankingContainer}>
-        <h1>Leaderboard</h1>
+        <div className={styles.rankingContainer}>
+          <h1>Leaderboard</h1>
 
-        <ReactLoading
-        width={50}
-        className={styles.loadingSpinner}
-        type="spokes"
-        color="#5965E0"
-      />
-      </div>
-    </>
+          <ReactLoading
+            width={50}
+            className={styles.loadingSpinner}
+            type="spokes"
+            color="#5965E0"
+          />
+        </div>
+      </>
     )
   }
 
